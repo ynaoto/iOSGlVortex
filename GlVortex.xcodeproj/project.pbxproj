@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9315AD7C1A696CB6000D34F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9315AD7B1A696CB6000D34F0 /* main.m */; };
+		9315AD7F1A696CB6000D34F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9315AD7E1A696CB6000D34F0 /* AppDelegate.m */; };
+		9315AD811A696CB6000D34F0 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9315AD801A696CB6000D34F0 /* Shader.fsh */; };
+		9315AD831A696CB6000D34F0 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9315AD821A696CB6000D34F0 /* Shader.vsh */; };
+		9315AD861A696CB6000D34F0 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9315AD851A696CB6000D34F0 /* GameViewController.m */; };
+		9315AD891A696CB6000D34F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9315AD871A696CB6000D34F0 /* Main.storyboard */; };
+		9315AD8B1A696CB6000D34F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9315AD8A1A696CB6000D34F0 /* Images.xcassets */; };
+		9315AD8E1A696CB6000D34F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9315AD8C1A696CB6000D34F0 /* LaunchScreen.xib */; };
+		9315AD9A1A696CB6000D34F0 /* GlVortexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9315AD991A696CB6000D34F0 /* GlVortexTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9315AD941A696CB6000D34F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9315AD6E1A696CB5000D34F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9315AD751A696CB6000D34F0;
+			remoteInfo = GlVortex;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9315AD761A696CB6000D34F0 /* GlVortex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlVortex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9315AD7A1A696CB6000D34F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9315AD7B1A696CB6000D34F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9315AD7D1A696CB6000D34F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9315AD7E1A696CB6000D34F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9315AD801A696CB6000D34F0 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		9315AD821A696CB6000D34F0 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		9315AD841A696CB6000D34F0 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		9315AD851A696CB6000D34F0 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		9315AD881A696CB6000D34F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9315AD8A1A696CB6000D34F0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9315AD8D1A696CB6000D34F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9315AD931A696CB6000D34F0 /* GlVortexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlVortexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9315AD981A696CB6000D34F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9315AD991A696CB6000D34F0 /* GlVortexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlVortexTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9315AD731A696CB6000D34F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9315AD901A696CB6000D34F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9315AD6D1A696CB5000D34F0 = {
+			isa = PBXGroup;
+			children = (
+				9315AD781A696CB6000D34F0 /* GlVortex */,
+				9315AD961A696CB6000D34F0 /* GlVortexTests */,
+				9315AD771A696CB6000D34F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9315AD771A696CB6000D34F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9315AD761A696CB6000D34F0 /* GlVortex.app */,
+				9315AD931A696CB6000D34F0 /* GlVortexTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9315AD781A696CB6000D34F0 /* GlVortex */ = {
+			isa = PBXGroup;
+			children = (
+				9315AD7D1A696CB6000D34F0 /* AppDelegate.h */,
+				9315AD7E1A696CB6000D34F0 /* AppDelegate.m */,
+				9315AD801A696CB6000D34F0 /* Shader.fsh */,
+				9315AD821A696CB6000D34F0 /* Shader.vsh */,
+				9315AD841A696CB6000D34F0 /* GameViewController.h */,
+				9315AD851A696CB6000D34F0 /* GameViewController.m */,
+				9315AD871A696CB6000D34F0 /* Main.storyboard */,
+				9315AD8A1A696CB6000D34F0 /* Images.xcassets */,
+				9315AD8C1A696CB6000D34F0 /* LaunchScreen.xib */,
+				9315AD791A696CB6000D34F0 /* Supporting Files */,
+			);
+			path = GlVortex;
+			sourceTree = "<group>";
+		};
+		9315AD791A696CB6000D34F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9315AD7A1A696CB6000D34F0 /* Info.plist */,
+				9315AD7B1A696CB6000D34F0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9315AD961A696CB6000D34F0 /* GlVortexTests */ = {
+			isa = PBXGroup;
+			children = (
+				9315AD991A696CB6000D34F0 /* GlVortexTests.m */,
+				9315AD971A696CB6000D34F0 /* Supporting Files */,
+			);
+			path = GlVortexTests;
+			sourceTree = "<group>";
+		};
+		9315AD971A696CB6000D34F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9315AD981A696CB6000D34F0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9315AD751A696CB6000D34F0 /* GlVortex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9315AD9D1A696CB6000D34F0 /* Build configuration list for PBXNativeTarget "GlVortex" */;
+			buildPhases = (
+				9315AD721A696CB6000D34F0 /* Sources */,
+				9315AD731A696CB6000D34F0 /* Frameworks */,
+				9315AD741A696CB6000D34F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GlVortex;
+			productName = GlVortex;
+			productReference = 9315AD761A696CB6000D34F0 /* GlVortex.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9315AD921A696CB6000D34F0 /* GlVortexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9315ADA01A696CB6000D34F0 /* Build configuration list for PBXNativeTarget "GlVortexTests" */;
+			buildPhases = (
+				9315AD8F1A696CB6000D34F0 /* Sources */,
+				9315AD901A696CB6000D34F0 /* Frameworks */,
+				9315AD911A696CB6000D34F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9315AD951A696CB6000D34F0 /* PBXTargetDependency */,
+			);
+			name = GlVortexTests;
+			productName = GlVortexTests;
+			productReference = 9315AD931A696CB6000D34F0 /* GlVortexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9315AD6E1A696CB5000D34F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Naoto Yoshioka";
+				TargetAttributes = {
+					9315AD751A696CB6000D34F0 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					9315AD921A696CB6000D34F0 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 9315AD751A696CB6000D34F0;
+					};
+				};
+			};
+			buildConfigurationList = 9315AD711A696CB5000D34F0 /* Build configuration list for PBXProject "GlVortex" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9315AD6D1A696CB5000D34F0;
+			productRefGroup = 9315AD771A696CB6000D34F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9315AD751A696CB6000D34F0 /* GlVortex */,
+				9315AD921A696CB6000D34F0 /* GlVortexTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9315AD741A696CB6000D34F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9315AD8E1A696CB6000D34F0 /* LaunchScreen.xib in Resources */,
+				9315AD891A696CB6000D34F0 /* Main.storyboard in Resources */,
+				9315AD8B1A696CB6000D34F0 /* Images.xcassets in Resources */,
+				9315AD831A696CB6000D34F0 /* Shader.vsh in Resources */,
+				9315AD811A696CB6000D34F0 /* Shader.fsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9315AD911A696CB6000D34F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9315AD721A696CB6000D34F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9315AD7F1A696CB6000D34F0 /* AppDelegate.m in Sources */,
+				9315AD861A696CB6000D34F0 /* GameViewController.m in Sources */,
+				9315AD7C1A696CB6000D34F0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9315AD8F1A696CB6000D34F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9315AD9A1A696CB6000D34F0 /* GlVortexTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9315AD951A696CB6000D34F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9315AD751A696CB6000D34F0 /* GlVortex */;
+			targetProxy = 9315AD941A696CB6000D34F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9315AD871A696CB6000D34F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9315AD881A696CB6000D34F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9315AD8C1A696CB6000D34F0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9315AD8D1A696CB6000D34F0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9315AD9B1A696CB6000D34F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9315AD9C1A696CB6000D34F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9315AD9E1A696CB6000D34F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GlVortex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9315AD9F1A696CB6000D34F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GlVortex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9315ADA11A696CB6000D34F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GlVortexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GlVortex.app/GlVortex";
+			};
+			name = Debug;
+		};
+		9315ADA21A696CB6000D34F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GlVortexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GlVortex.app/GlVortex";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9315AD711A696CB5000D34F0 /* Build configuration list for PBXProject "GlVortex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9315AD9B1A696CB6000D34F0 /* Debug */,
+				9315AD9C1A696CB6000D34F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9315AD9D1A696CB6000D34F0 /* Build configuration list for PBXNativeTarget "GlVortex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9315AD9E1A696CB6000D34F0 /* Debug */,
+				9315AD9F1A696CB6000D34F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9315ADA01A696CB6000D34F0 /* Build configuration list for PBXNativeTarget "GlVortexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9315ADA11A696CB6000D34F0 /* Debug */,
+				9315ADA21A696CB6000D34F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9315AD6E1A696CB5000D34F0 /* Project object */;
+}
