@@ -87,6 +87,8 @@ GLfloat gCubeVertexData[216] =
 }
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKBaseEffect *effect;
+@property (weak, nonatomic) IBOutlet UIButton *actionButton;
+@property (weak, nonatomic) IBOutlet UIImageView *overlayImageView;
 
 - (void)setupGL;
 - (void)tearDownGL;
@@ -98,11 +100,29 @@ GLfloat gCubeVertexData[216] =
 @end
 
 @implementation GameViewController
+{
+    bool _doingBackgroundTask;
+    CIFilter *_distortionFilter;
+    CIFilter *_clampFilter;
+    CIImage *_screenImage;
+    float _angle;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    _doingBackgroundTask = NO;
+    
+    _distortionFilter = [CIFilter filterWithName:@"CITwirlDistortion"];
+    [_distortionFilter setDefaults];
+    [_distortionFilter setValue:@300 forKey:kCIInputRadiusKey];
+    
+    _clampFilter = [CIFilter filterWithName:@"CIAffineClamp"];
+    [_clampFilter setDefaults];
+    [_clampFilter setValue:[NSValue valueWithCGAffineTransform:CGAffineTransformIdentity]
+                    forKey:kCIInputTransformKey];
+
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 
     if (!self.context) {
@@ -193,6 +213,20 @@ GLfloat gCubeVertexData[216] =
 
 - (void)update
 {
+    if (_doingBackgroundTask) {
+        [_distortionFilter setValue:@(_angle) forKey:kCIInputAngleKey];
+        [_clampFilter setValue:_distortionFilter.outputImage forKey:kCIInputImageKey];
+        CIImage *result = _clampFilter.outputImage;
+        
+        CIContext *context = [CIContext contextWithOptions:nil];
+        CGImageRef cgImage = [context createCGImage:result fromRect:_screenImage.extent];
+        self.overlayImageView.image = [UIImage imageWithCGImage:cgImage];
+        CGImageRelease(cgImage);
+        
+        _angle += 0.1;
+        return;
+    }
+    
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
     
@@ -391,6 +425,48 @@ GLfloat gCubeVertexData[216] =
     }
     
     return YES;
+}
+
+- (IBAction)action:(id)sender {
+    self.actionButton.enabled = NO;
+    
+    UIImage *image = [(GLKView*)self.view snapshot];
+    self.overlayImageView.image = image;
+    _screenImage = [CIImage imageWithCGImage:image.CGImage];
+    
+    [_distortionFilter setValue:_screenImage forKey:kCIInputImageKey];
+    CGRect extent = _screenImage.extent;
+    CIVector *center = [CIVector vectorWithX:CGRectGetMidX(extent) Y:CGRectGetMidY(extent)];
+    [_distortionFilter setValue:center forKey:kCIInputCenterKey];
+    _angle = 0;
+    
+    float alphaOrg = self.overlayImageView.alpha;
+    self.overlayImageView.hidden = NO;
+    
+    _doingBackgroundTask = YES;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 5秒かかるタスク開始
+        NSLog(@"loop start!");
+        NSDate *start = [NSDate date];
+        while ([[NSDate date] timeIntervalSinceDate:start] < 5) {
+            ;
+        }
+        NSLog(@"loop end!");
+        // 5秒かかるタスク終了
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:1
+                             animations:^{
+                                 self.overlayImageView.alpha = 0;
+                             }
+                             completion:^(BOOL finished) {
+                                 self.overlayImageView.hidden = YES;
+                                 self.overlayImageView.alpha = alphaOrg;
+                                 self.actionButton.enabled = YES;
+                                 _doingBackgroundTask = NO;
+                                 _screenImage = nil;
+                             }];
+        });
+    });
 }
 
 @end
